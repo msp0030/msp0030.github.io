@@ -36,6 +36,11 @@
     nav a:hover {
       color: #ffd84a;
     }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
     .hero {
       text-align: center;
       padding: 100px 20px;
@@ -45,11 +50,31 @@
       margin-bottom: 20px;
       color: #ffd84a;
     }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 650px;
-      margin: auto;
-      line-height: 1.8;
+    .video-embed iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      border-radius: 12px;
+    }
+    .articles, .books, .playlists, .episodes, .gallery, .socials {
+      margin-top: 40px;
+    }
+    .item-card {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .item-card h3 { color: #ffd84a; }
+    a.btn {
+      display: inline-block;
+      background: #f2c200;
+      color: #000;
+      padding: 10px 18px;
+      border-radius: 8px;
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: bold;
     }
     footer {
       text-align: center;
@@ -67,17 +92,72 @@
     <nav>
       <a href="#">خانه</a>
       <a href="#books">کتاب‌های منتشرشده</a>
-      <a href="#contact">ارتباط با ما</a>
-      <a href="#support">حمایت</a>
+      <a href="#articles">مقالات</a>
+      <a href="#audio">نسخه صوتی</a>
+      <a href="#socials">شبکه‌های اجتماعی</a>
     </nav>
   </header>
 
   <section class="hero">
     <h1>به لِرن‌کَست خوش آمدید</h1>
-    <p>
-      لِرن‌کَست پلتفرمی است برای ترجمه، انتشار و صوتی‌سازی کتاب‌های حوزه لیبرالیسم.
-      هدف ما ارائه محتوای باکیفیت، روان و قابل فهم برای تمام علاقه‌مندان به اندیشه‌های آزادی‌خواهانه است.
-    </p>
+    <p>ترجمه، انتشار و صوتی‌سازی کتاب‌های حوزه لیبرالیسم برای همه علاقه‌مندان به اندیشه‌های آزادی‌خواهانه.</p>
+  </section>
+
+  <section id="latest-video">
+    <h2>آخرین اپیزود منتشر شده</h2>
+    <div class="video-embed">
+      <iframe src="YOUR-YOUTUBE-VIDEO-URL"></iframe>
+    </div>
+  </section>
+
+  <section id="articles" class="articles">
+    <h2>تازه‌ترین مقالات</h2>
+    <div class="item-card"><h3>عنوان مقاله اول</h3><p>خلاصه کوتاه...</p></div>
+    <div class="item-card"><h3>عنوان مقاله دوم</h3><p>خلاصه کوتاه...</p></div>
+  </section>
+
+  <section id="books" class="books">
+    <h2>کتاب‌های منتشرشده</h2>
+    <div class="item-card">
+      <h3>نام کتاب</h3>
+      <p>نویسنده: ...</p>
+      <a class="btn" href="book-page.html" target="_blank">مشاهده اطلاعات</a>
+    </div>
+  </section>
+
+  <section id="audio" class="playlists">
+    <h2>نسخه صوتی</h2>
+    <div class="item-card">
+      <h3>پلی‌لیست نمونه</h3>
+      <a class="btn" href="#episodes">نمایش اپیزودها</a>
+    </div>
+  </section>
+
+  <section id="episodes" class="episodes">
+    <h2>لیست اپیزودها</h2>
+    <div class="item-card">
+      <h3>نام اپیزود</h3>
+      <p>توضیحات اپیزود...</p>
+      <div class="video-embed"><iframe src="YOUTUBE-URL"></iframe></div>
+      <br />
+      <a class="btn" href="CASTBOX-URL" target="_blank">Castbox</a>
+      <a class="btn" href="SPOTIFY-URL" target="_blank">Spotify</a>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>خلاصه‌های تصویری</h2>
+    <div class="item-card">(اینجا عکس‌ها قرار می‌گیرند)</div>
+  </section>
+
+  <section id="socials" class="socials">
+    <h2>شبکه‌های اجتماعی</h2>
+    <div class="item-card">تلگرام (کانال اصلی): <a href="#">لینک</a></div>
+    <div class="item-card">تلگرام (کتابخانه): <a href="#">لینک</a></div>
+    <div class="item-card">اینستاگرام: <a href="#">لینک</a></div>
+    <div class="item-card">یوتیوب: <a href="#">لینک</a></div>
+    <div class="item-card">کست باکس: <a href="#">لینک</a></div>
+    <div class="item-card">اسپاتیفای: <a href="#">لینک</a></div>
   </section>
 
   <footer>
