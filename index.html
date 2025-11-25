@@ -1,167 +1,173 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>لِرن‌کَست</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background-color: #000;
-      color: #f2c200;
-    }
-    header {
-      background-color: #111;
-      padding: 15px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    header .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #f2c200;
-    }
-    nav a {
-      color: #f2c200;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 1.1rem;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #ffd84a;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      color: #ffd84a;
-    }
-    .video-embed iframe {
-      width: 100%;
-      height: 350px;
-      border: none;
-      border-radius: 12px;
-    }
-    .articles, .books, .playlists, .episodes, .gallery, .socials {
-      margin-top: 40px;
-    }
-    .item-card {
-      background: #111;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-    .item-card h3 { color: #ffd84a; }
-    a.btn {
-      display: inline-block;
-      background: #f2c200;
-      color: #000;
-      padding: 10px 18px;
-      border-radius: 8px;
-      margin-top: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
-      background: #111;
-      color: #f2c200;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>لرن کست | ترجمه و صوت کتاب‌های لیبرالیسم</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: #000; 
+            color: #ffdd00; 
+            font-family: Tahoma, Arial, sans-serif; 
+            line-height: 1.7;
+        }
+        nav {
+            background: #ffdd00;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        nav a {
+            color: #000;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        nav a:hover { text-decoration: underline; }
+
+        main { margin-top: 70px; padding: 20px; }
+        section { display: none; }
+        section.active { display: block; }
+
+        h1, h2 { color: #ffdd00; margin: 20px 0; }
+        iframe { width: 100%; max-width: 720px; height: 405px; margin: 20px 0; border: none; }
+        ul { padding-right: 20px; }
+        a { color: #ffdd00; }
+        .social-icons img { width: 50px; vertical-align: middle; margin-left: 10px; }
+        .wallet { direction: ltr; font-family: monospace; background: #111; padding: 10px; border-radius: 8px; }
+        footer { text-align: center; padding: 30px; margin-top: 50px; color: #888; }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="logo">لِرن‌کَست</div>
-    <nav>
-      <a href="#">خانه</a>
-      <a href="#books">کتاب‌های منتشرشده</a>
-      <a href="#articles">مقالات</a>
-      <a href="#audio">نسخه صوتی</a>
-      <a href="#socials">شبکه‌های اجتماعی</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h1>به لِرن‌کَست خوش آمدید</h1>
-    <p>ترجمه، انتشار و صوتی‌سازی کتاب‌های حوزه لیبرالیسم برای همه علاقه‌مندان به اندیشه‌های آزادی‌خواهانه.</p>
-  </section>
+<nav>
+    <a href="#home" onclick="show('home')">خانه</a>
+    <a href="#books" onclick="show('books')">کتاب‌های منتشر شده</a>
+    <a href="#articles" onclick="show('articles')">مقالات</a>
+    <a href="#audio" onclick="show('audio')">نسخه صوتی</a>
+    <a href="#summaries" onclick="show('summaries')">خلاصه‌های تصویری</a>
+    <a href="#social" onclick="show('social')">شبکه‌های اجتماعی</a>
+    <a href="#support" onclick="show('support')">حمایت از ما</a>
+</nav>
 
-  <section id="latest-video">
-    <h2>آخرین اپیزود منتشر شده</h2>
-    <div class="video-embed">
-      <iframe src="YOUR-YOUTUBE-VIDEO-URL"></iframe>
-    </div>
-  </section>
+<main>
 
-  <section id="articles" class="articles">
+<!-- صفحه خانه -->
+<section id="home" class="active">
+    <h1>به لرن‌کست خوش آمدید</h1>
+    <h2>آخرین اپیزود منتشر شده در یوتیوب</h2>
+    <!-- آخرین ویدیو رو هر بار دستی عوض کن (VIDEO_ID رو تغییر بده) -->
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
+
     <h2>تازه‌ترین مقالات</h2>
-    <div class="item-card"><h3>عنوان مقاله اول</h3><p>خلاصه کوتاه...</p></div>
-    <div class="item-card"><h3>عنوان مقاله دوم</h3><p>خلاصه کوتاه...</p></div>
-  </section>
+    <ul>
+        <li><a href="#articles">مجموعه مقالات ماری روتبارد – بخش اول</a></li>
+        <li><a href="#articles">چرا لیبرتارین هستم – ماری روتبارد</a></li>
+    </ul>
+</section>
 
-  <section id="books" class="books">
-    <h2>کتاب‌های منتشرشده</h2>
-    <div class="item-card">
-      <h3>نام کتاب</h3>
-      <p>نویسنده: ...</p>
-      <a class="btn" href="book-page.html" target="_blank">مشاهده اطلاعات</a>
+<!-- کتاب‌های منتشر شده -->
+<section id="books">
+    <h1>کتاب‌های منتشر شده</h1>
+    <ul>
+        <li><strong>اخلاق آزادی</strong> – ماری روتبارد<br>
+            <a href="https://t.me/Learncast" target="_blank">دانلود PDF</a> | 
+            <a href="https://www.youtube.com/playlist?list=PLb7b4L5z2oqX2n5u9X2j5n9X2j5n9X2j5" target="_blank">پلی‌لیست صوتی</a>
+        </li><br>
+        <li><strong>برای یک آزادی جدید</strong> – ماری روتبارد<br>
+            <a href="https://t.me/Learncast" target="_blank">دانلود PDF</a> | 
+            <a href="https://www.youtube.com/playlist?list=PLb7b4L5z2oqX2n5u9X2j5n9X2j5n9X2j5" target="_blank">پلی‌لیست صوتی</a>
+        </li>
+        <!-- کتاب‌های بعدی رو همینجا اضافه کن -->
+    </ul>
+</section>
+
+<!-- مقالات -->
+<section id="articles">
+    <h1>مقالات</h1>
+    <ul>
+        <li>مجموعه مقالات ماری روتبارد – بخش اول</li>
+        <li>چرا لیبرتارین هستم – ماری روتبارد</li>
+        <li>آناتومی دولت – ماری روتبارد</li>
+        <!-- مقاله‌های بیشتر اضافه کن -->
+    </ul>
+</section>
+
+<!-- نسخه صوتی -->
+<section id="audio">
+    <h1>نسخه‌های صوتی</h1>
+    <p>همه اپیزودها در سه پلتفرم زیر در دسترس هستند:</p>
+    
+    <h2>کتاب «اخلاق آزادی» – ماری روتبossoارد</h2>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
+    <iframe src="https://castbox.fm/embed/6617680" style="height:166px;"></iframe>
+    <iframe src="https://open.spotify.com/embed/show/3MExsm6sUwxHhV" height="352"></iframe>
+
+    <!-- اپیزودهای بعدی رو همینجا اضافه کن -->
+</section>
+
+<!-- خلاصه‌های تصویری -->
+<section id="summaries">
+    <h1>خلاصه‌های تصویری کتاب‌ها</h1>
+    <p>به‌زودی تصاویر و اینفوگرافیک‌های جذاب اضافه میشه…</p>
+    <!-- عکس‌ها رو با تگ img اضافه کن -->
+</section>
+
+<!-- شبکه‌های اجتماعی -->
+<section id="social">
+    <h1>شبکه‌های اجتماعی لرن‌کست</h1>
+    <div class="social-icons">
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="تلگرام"> 
+           <a href="https://t.me/Learn_Cast" target="_blank">تلگرام لرن‌کست</a></p>
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="تلگرام"> 
+           <a href="https://t.me/Learncast" target="_blank">کتابخانه لرن‌کست</a></p>
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="اینستاگرام"> 
+           <a href="https://www.instagram.com/learncast_fa" target="_blank">اینستاگرام</a></p>
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="یوتیوب" width="50"> 
+           <a href="https://www.youtube.com/@Learncast_fa" target="_blank">یوتیوب</a></p>
+        <p> <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="اسپاتیفای"> 
+           <a href="https://open.spotify.com/show/3MExsm6sUwxHhV" target="_blank">اسپاتیفای</a></p>
+        <p> <img src="https://castbox.fm/static/img/castbox-logo.png" alt="کست‌باکس" width="50"> 
+           <a href="https://castbox.fm/vh/6617680" target="_blank">کست‌باکس</a></p>
     </div>
-  </section>
+</section>
 
-  <section id="audio" class="playlists">
-    <h2>نسخه صوتی</h2>
-    <div class="item-card">
-      <h3>پلی‌لیست نمونه</h3>
-      <a class="btn" href="#episodes">نمایش اپیزودها</a>
-    </div>
-  </section>
+<!-- حمایت از ما -->
+<section id="support">
+    <h1>حمایت از ما</h1>
+    <p style="font-size:18px;">حمایت مالی شما دلگرمی بزرگیه و کمک میکنه این مسیر رو با قدرت ادامه بدم ❤️</p>
+    <h2>راه‌های حمایت مالی از لرن‌کست:</h2>
+    <p>💰 ریالی و ارزی: <a href="https://hamibash.com/LearnCast" target="_blank">https://hamibash.com/LearnCast</a></p>
+    <p>₿ از طریق رمز ارزهای شبکه TON:</p>
+    <div class="wallet">UQAzf4ATpTXYCIXHzjTYiddEpdDd2cMae_7vwQFlgMyEPMuh</div>
+</section>
 
-  <section id="episodes" class="episodes">
-    <h2>لیست اپیزودها</h2>
-    <div class="item-card">
-      <h3>نام اپیزود</h3>
-      <p>توضیحات اپیزود...</p>
-      <div class="video-embed"><iframe src="YOUTUBE-URL"></iframe></div>
-      <br />
-      <a class="btn" href="CASTBOX-URL" target="_blank">Castbox</a>
-      <a class="btn" href="SPOTIFY-URL" target="_blank">Spotify</a>
-    </div>
-  </section>
+</main>
 
-  <section id="gallery" class="gallery">
-    <h2>خلاصه‌های تصویری</h2>
-    <div class="item-card">(اینجا عکس‌ها قرار می‌گیرند)</div>
-  </section>
+<footer>
+    © ۱۴۰۴–۲۰۲۵ لرن‌کست – تمام حقوق محفوظ است
+</footer>
 
-  <section id="socials" class="socials">
-    <h2>شبکه‌های اجتماعی</h2>
-    <div class="item-card">تلگرام (کانال اصلی): <a href="#">لینک</a></div>
-    <div class="item-card">تلگرام (کتابخانه): <a href="#">لینک</a></div>
-    <div class="item-card">اینستاگرام: <a href="#">لینک</a></div>
-    <div class="item-card">یوتیوب: <a href="#">لینک</a></div>
-    <div class="item-card">کست باکس: <a href="#">لینک</a></div>
-    <div class="item-card">اسپاتیفای: <a href="#">لینک</a></div>
-  </section>
+<script>
+    function show(page) {
+        document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(page).classList.add('active');
+        window.scrollTo(0, 0);
+    }
+    // وقتی صفحه لود شد، لینک‌های # رو هم هندل کن
+    window.addEventListener('hashchange', () => {
+        const hash = location.hash.slice(1) || 'home';
+        show(hash);
+    });
+    if (location.hash) show(location.hash.slice(1));
+</script>
 
-  <footer>
-    © 2025 لِرن‌کَست — ترجمه و صوتی‌سازی کتاب‌های لیبرالیسم
-  </footer>
 </body>
 </html>
